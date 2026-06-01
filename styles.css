@@ -1,0 +1,52 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+}
+
+/* ===== NAVBAR ===== */
+#navbar {
+  display: flex;
+  align-items: center;
+  background-color: #3a3a3a;
+  padding: 0 24px;
+  height: 56px;
+  gap: 32px;
+}
+
+#nav-logo a {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#nav-links {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+}
+
+.nav-link {
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-link.active {
+  color: #7ab3e0; /* azul grisáceo, se cambiará al agregar color */
+}
+
+#nav-search {
+  margin-left: auto;
+}
+
+
+

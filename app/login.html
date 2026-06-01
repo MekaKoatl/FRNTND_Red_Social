@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <main id="auth-container">
+    <h2>Iniciar sesión</h2>
+    <input id="email" type="email" placeholder="Correo electrónico">
+    <input id="password" type="password" placeholder="Contraseña">
+    <p id="error-msg"></p>
+    <button onclick="iniciarSesion()">Entrar</button>
+    <p>¿No tienes cuenta? <a href="resgistro.html">Regístrate</a></p>
+  </main>
+
+  <script type="module" src="../js/pages/login.js"></script>
+</body>
+</html>
