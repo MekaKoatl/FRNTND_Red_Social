@@ -1,6 +1,6 @@
 //
 function pruebausers() {
-  fetch("https://backendredsocial.vercel.app/usuarios/seeusers")
+  fetch(`${BASE_URL}/usuarios/seeusers`)
     .then((res) => res.json())
     .then((data) => {
       data.forEach((usuario) => {
