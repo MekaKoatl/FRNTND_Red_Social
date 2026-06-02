@@ -12,6 +12,7 @@ export async function register(username, email, password) {
 
 // Login
 export async function login(email, password) {
+  console.log("hola")
   const res = await fetch(`${BASE_URL}/usuarios/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

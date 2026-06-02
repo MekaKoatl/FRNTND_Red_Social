@@ -1,48 +1,47 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-  <!--- Favicon -->
-  <link
-    href="https://cdn-icons-png.flaticon.com/512/6821/6821173.png"
-    rel="icon"
-    type="image/x-icon"
-  />
-  <body>
-    <!-- Navbar -->
-    <nav id="navbar">
-      <div id="nav-logo">
-        <a href="postcrear.html">+</a>
-      </div>
-      <div id="nav-links">
-        <button onclick="changePage('./app/home.html')" class="nav-link active">
-          Home
-        </button>
-        <a onclick="changeProfile()" class="nav-link"
-          >Perfil</a
-        >
-        <a onclick="changePage('./app/messages.html')" class="nav-link"
-          >Mensajes</a
-        >
-        <a onclick="changePage('./app/login.html')" class="nav-link"
-          >Login</a
-        >
-      </div>
-      <div id="nav-search">
-        <a onclick="getBuscador()" class="nav-link">Buscar</a>
-        <div id="buscador-content"></div>
-      </div>
-    </nav>
 
-    <!-- Feed -->
-    <main id="feed">
-      <div id="content"></div>
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="./styles/register.css" />
 
-    <script src="index.js"></script>
-  </body>
+</head>
+<!--- Favicon -->
+<link href="https://cdn-icons-png.flaticon.com/512/6821/6821173.png" rel="icon" type="image/x-icon" />
+
+<body>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div id="nav-logo">
+      <a href="postcrear.html">+</a>
+    </div>
+    <div id="nav-links">
+      <button onclick="changePage('./app/home.html')" class="nav-link active">
+        Home
+      </button>
+      <a onclick="changeProfile()" class="nav-link">Perfil</a>
+      <a onclick="changePage('./app/messages.html')" class="nav-link">Mensajes</a>
+      <a onclick="changePage('./app/login.html')" class="nav-link">Login</a>
+      <a onclick="changePage('./app/registro.html')" class="nav-link">Registro</a>
+    </div>
+    <div id="nav-search">
+      <a onclick="getBuscador()" class="nav-link">Buscar</a>
+      <div id="buscador-content"></div>
+    </div>
+  </nav>
+
+  <!-- Feed -->
+  <main id="feed">
+    <div id="content"></div>
+  </main>
+
+  <script src="index.js"></script>
+  <script type="module" src="./js/pages/login.js"></script>
+  <script type="module" src="./js/pages/registro.js"></script>
+
+</body>
+
 </html>

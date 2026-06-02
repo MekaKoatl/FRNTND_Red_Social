@@ -11,11 +11,11 @@ body {
   color: #112;
 }
 
-#feed {
+/* #feed {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+} */
 
 #profile{
   display: flex;

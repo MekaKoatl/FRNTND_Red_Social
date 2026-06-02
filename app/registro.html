@@ -1,0 +1,31 @@
+
+<div id="register-main-container">
+  <div id="auth-container">
+    <h2>Crear cuenta</h2>
+    <div class="inputs-container">
+      <input id="email" type="email" placeholder="Correo electrónico">
+      <input id="username" type="text" placeholder="Nombre de usuario único">
+      <input id="password" type="password" placeholder="Contraseña (mínimo 8 caracteres)">
+    </div>
+    <p id="error-msg"></p>
+    <button onclick="registrarse()">Registrarse</button>
+    <p>¿Ya tienes cuenta? <a onclick="goToLogin()">Inicia sesión</a></p>
+  </div>
+</div>
+
+
+<!--
+  1. condicional contraseña de al menos 6 caracteres para registrarse
+  2. condicional user único para registrarse
+  3. guardar la contraseña cifrada
+  -->
+
+<script type="module" src="../js/pages/registro.js"></script>
+</body>
+
+</html>
+<!--
+1. condicional contraseña de al menos 6 caracteres para registrarse
+2. condicional user único para registrarse
+3. guardar la contraseña cifrada
+-->

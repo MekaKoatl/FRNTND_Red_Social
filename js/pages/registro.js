@@ -26,3 +26,13 @@ window.registrarse = async function () {
     errorMsg.textContent = data.message;
   }
 };
+
+
+window.goToLogin = () => {
+  console.log("holi")
+  fetch("./app/login.html")
+    .then((res) => res.text())
+    .then((html) => {
+      document.getElementById("content").innerHTML = html;
+    });
+}

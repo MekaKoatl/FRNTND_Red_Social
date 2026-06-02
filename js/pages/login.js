@@ -21,3 +21,4 @@ window.iniciarSesion = async function() {
     errorMsg.textContent = data.message;
   }
 }
+
