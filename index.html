@@ -19,15 +19,15 @@
         <a href="postcrear.html">+</a>
       </div>
       <div id="nav-links">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="profile.html" class="nav-link">Perfil</a>
-        <a href="messages.html" class="nav-link">Mensajes</a>
         <button onclick="changePage('./app/home.html')" class="nav-link active">Home</button>
-        <button onclick="changePage('./app/profile.html')" class="nav-link">Perfil</button>
-        <button onclick="changePage('./app/messages.html')" class="nav-link">Mensajes</button>
+        <a onclick="changePage('./app/profile.html')" class="nav-link">Perfil</a>
+        <a onclick="changePage('./app/messages.html')" class="nav-link">Mensajes</a>
       </div>
       <div id="nav-search">
-        <a href="buscador.html" class="nav-link">Buscar</a>
+        <a  onclick="getBuscador()" class="nav-link">Buscar</a>
+        <div id="buscador-content">
+
+        </div>
       </div>
     </nav>
 
