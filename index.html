@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red Social</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn-icons-png.flaticon.com/512/6821/6821173.png"
+      rel="icon"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <nav id="navbar">
+      <div id="nav-logo">
+        <a onclick="navegarA('postcrear')" style="cursor: pointer">+</a>
+      </div>
+      <div id="nav-links">
+        <a onclick="navegarA('home')" class="nav-link">Home</a>
+        <a onclick="navegarA('profile')" class="nav-link">Perfil</a>
+        <a onclick="navegarA('messages')" class="nav-link">Mensajes</a>
+      </div>
+      <div id="nav-search">
+        <a onclick="abrirBuscador()" class="nav-link">Buscar</a>
+      </div>
+    </nav>
+
+    <main id="content"></main>
+
+    <!-- Panel buscador -->
+    <div id="panel-buscador">
+      <button onclick="cerrarBuscador()" id="btn-cerrar">✕</button>
+      <input type="text" id="buscarInput" placeholder="Buscar usuario" />
+      <button onclick="buscar()">Buscar</button>
+      <div id="usuariosBuscados"></div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

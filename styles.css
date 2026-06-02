@@ -3,26 +3,52 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
-  font-family: sans-serif;
-  background-color: #ffffff;
-  color: #111111;
+  background-color: #eef;
+  color: #112;
+}
+
+#feed {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#postsProfile{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #aab;
+}
+
+#buscador {
+  background-color: #aab;
+  height: 100vmax;
+  padding: 0.5rem;
 }
 
 /* ===== NAVBAR ===== */
 #navbar {
   display: flex;
   align-items: center;
-  background-color: #3a3a3a;
+  background-color: #334;
   padding: 0 24px;
   height: 56px;
   gap: 32px;
 }
 
 #nav-logo a {
-  color: #ffffff;
+  color: #eef;
   font-size: 28px;
   font-weight: bold;
   text-decoration: none;
@@ -35,18 +61,48 @@ body {
 }
 
 .nav-link {
-  color: #aaaaaa;
+  color: #aab;
   text-decoration: none;
   font-size: 16px;
 }
 
 .nav-link.active {
-  color: #7ab3e0; /* azul grisáceo, se cambiará al agregar color */
+  color: #7be; /* azul grisáceo, se cambiará al agregar color */
 }
 
 #nav-search {
   margin-left: auto;
 }
 
+.nav-link {
+  cursor: pointer;
+}
 
+/* ===== PANEL BUSCADOR ===== */
+#panel-buscador {
+  position: fixed;
+  top: 0;
+  right: -320px; /* oculto por defecto */
+  width: 320px;
+  height: 100vh;
+  background-color: #2a2a3a;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: right 0.3s ease;
+  z-index: 100;
+}
 
+#panel-buscador.abierto {
+  right: 0;
+}
+
+#btn-cerrar {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #eef;
+  font-size: 20px;
+  cursor: pointer;
+}

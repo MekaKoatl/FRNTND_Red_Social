@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+import { BASE_URL } from './config.js';
 
 // Registrar usuario
 export async function register(username, email, password) {
@@ -43,3 +43,4 @@ export async function getUsers() {
   const res = await fetch(`${BASE_URL}/usuarios/seeusers`);
   return res.json();
 }
+

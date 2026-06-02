@@ -1,37 +1,21 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Messages</title>
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-  <!--- Favicon -->
-  <link
-    href="https://cdn-icons-png.flaticon.com/512/6821/6821173.png"
-    rel="icon"
-    type="image/x-icon"
-  />
-  <body>
-    <!-- Navbar -->
-    <nav id="navbar">
-      <div id="nav-logo">
-        <a href="">+</a>
-      </div>
-      <div id="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="profile.html" class="nav-link">Perfil</a>
-        <a href="messages.html" class="nav-link active">Mensajes</a>
-      </div>
-      <div id="nav-search">
-        <a href="buscar.html" class="nav-link">Buscar</a>
-      </div>
-    </nav>
-
-    <main id="">
-      <p>Mensajes</p>
-    </main>
-
-    <script src=""></script>
-  </body>
-</html>
+<div>
+  <div><input type="text" placeholder="enviar mensaje a" /></div>
+  <div id="usuariosChat"></div>
+</div>
+<div>
+  <h3>jane doe</h3>
+  <div>
+    <div id="usuarioOtro">
+      <p class="nombreuser"></p>
+      <p class="mensaje"></p>
+    </div>
+    <div id="usuarioOtro">
+      <p class="nombreuser"></p>
+      <p class="mensaje"></p>
+    </div>
+  </div>
+  <div>
+    <input type="text" placeholder="escribe aquí" />
+    <button onclick="sendMessage()">enviar</button>
+  </div>
+</div>
