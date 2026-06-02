@@ -1,39 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="../styles.css">
-</head>
-<!--- Favicon -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <!--- Favicon -->
   <link
     href="https://cdn-icons-png.flaticon.com/512/6821/6821173.png"
     rel="icon"
     type="image/x-icon"
   />
-<body>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <div id="nav-logo">
+        <a href="postcrear.html">+</a>
+      </div>
+      <div id="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="profile.html" class="nav-link">Perfil</a>
+        <a href="messages.html" class="nav-link">Mensajes</a>
+        <button onclick="changePage('./app/home.html')" class="nav-link active">Home</button>
+        <button onclick="changePage('./app/profile.html')" class="nav-link">Perfil</button>
+        <button onclick="changePage('./app/messages.html')" class="nav-link">Mensajes</button>
+      </div>
+      <div id="nav-search">
+        <a href="buscador.html" class="nav-link">Buscar</a>
+      </div>
+    </nav>
 
-  <!-- Navbar -->
-  <nav id="navbar">
-    <div id="nav-logo">
-      <a href="postcrear.html">+</a>
-    </div>
-    <div id="nav-links">
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="profile.html" class="nav-link">Perfil</a>
-      <a href="messages.html" class="nav-link">Mensajes</a>
-    </div>
-    <div id="nav-search">
-      <a href="buscador.html" class="nav-link">Buscar</a>
-    </div>
-  </nav>
+    <!-- Feed -->
+    <main id="feed">
+      <div id="content"></div>
+    </main>
 
-  <!-- Feed -->
-  <main id="feed">
-  <div id="posts"></div>
-  </main>
-
-  <script src="index.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
