@@ -1,14 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar personas</title>
-    <link rel="stylesheet" href="///.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
+<!--- Favicon -->
+  <link
+    href="https://cdn-icons-png.flaticon.com/512/6821/6821173.png"
+    rel="icon"
+    type="image/x-icon"
+  />
 <body>
 
-    <script src="buscador.js"></script>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div id="nav-logo">
+      <a href="postcrear.html">+</a>
+    </div>
+    <div id="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="profile.html" class="nav-link">Perfil</a>
+      <a href="messages.html" class="nav-link">Mensajes</a>
+    </div>
+    <div id="nav-search">
+      <a href="buscador.html" class="nav-link active">Buscar</a>
+    </div>
+  </nav>
+
+  <!-- Feed -->
+  <main id="feed">
+<div></div>
+<div id="buscador">
+    <input type="text" placeholder="buscar usuario">
+    <button onclick="search()">buscar</button>
+    <div id="usuariosBuscados"></div>
+</div>
+
+  </main>
+
+  <script src=""></script>
 </body>
 </html>
-

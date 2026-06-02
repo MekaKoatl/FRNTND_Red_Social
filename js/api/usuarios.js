@@ -43,3 +43,4 @@ export async function getUsers() {
   const res = await fetch(`${BASE_URL}/usuarios/seeusers`);
   return res.json();
 }
+
