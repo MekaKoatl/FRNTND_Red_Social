@@ -12,7 +12,8 @@ let mensajes = [
 ];
 
 
-export function getMensajes() {
+export function getMensajes(id) {
+    console.log(id)
     document.getElementById("chat").innerHTML = ""
 
     mensajes.forEach(mensaje => {

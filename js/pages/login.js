@@ -18,7 +18,7 @@ window.iniciarSesion = async function() {
   if (data.usuario) {
     localStorage.setItem('userId', data.usuario.id);
     localStorage.setItem('username', data.usuario.username);
-    window.location.href = 'index.html';
+    changeProfile()
   } else {
     errorMsg.textContent = data.message;
   }

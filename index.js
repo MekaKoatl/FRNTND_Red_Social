@@ -1,8 +1,10 @@
 import { getAmigos } from "./js/api/seguidores.js";
 import { getMensajes } from "./js/api/mensajes.js";
 
-
-let userName = "Pedro";
+//variables globales
+let userName = "";
+let userId = ""
+let userSelectedId = ""
 
 window.getMensajes = getMensajes
 
@@ -17,17 +19,21 @@ window.changePage = (page) => {
 window.changeProfile = () => {
   fetch("./app/profile.html")
     .then((res) => res.text())
-    .then((html) => {
+    .then(async (html) => {
       document.getElementById("content").innerHTML = html;
-      document.getElementById("user-name").innerText = userName;
-      getAmigos().forEach((amigo, index) => {
+      document.getElementById("user-name").innerText = localStorage.getItem("username")
+      const id = localStorage.getItem("userId")
+      const amigos = await getAmigos(id)
+      console.log(amigos)
+
+      amigos.following.forEach((amigo, index) => {
         document.getElementById("lista-amigos").innerHTML += index % 2 == 0 ?
           `
-        <button onclick="getMensajes()" class="friend-info"><strong>${amigo.username}</strong></button>
+        <p onclick="getMensajes(${amigo.id})" class="friend-info"><strong>${amigo.username}</strong></p>
         `
           :
           `
-        <button onclick="getMensajes()" class="friend-info gray-friend"><strong>${amigo.username}</strong></button>
+        <p onclick="getMensajes(${amigo.id})" class="friend-info gray-friend"><strong>${amigo.username}</strong></p>
         `
       })
     });
