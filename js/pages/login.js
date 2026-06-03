@@ -23,3 +23,14 @@ export function cargarLogin() {
     }
   }
 }
+
+
+
+window.goToRegister = () => {
+  console.log("holi")
+  fetch("./app/registro.html")
+    .then((res) => res.text())
+    .then((html) => {
+      document.getElementById("content").innerHTML = html;
+    });
+}

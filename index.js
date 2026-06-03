@@ -6,6 +6,13 @@ import { cargarMessages } from "./js/pages/messages.js";
 
 const content = document.getElementById("content");
 
+// window.getMensajes = getMensajes
+
+//variables globales
+let userName = "";
+let userId = ""
+let userSelectedId = ""
+
 // Cargar fragmento HTML
 async function cargarFragmento(pagina) {
   const archivo = pagina === "registro" ? "resgistro" : pagina;
@@ -53,13 +60,37 @@ window.navegarA = async function (pagina) {
   }
 };
 
-// Página inicial — si no hay sesión ir a login, si hay ir a home
-const userId = localStorage.getItem("userId");
-if (!userId) {
-  navegarA("login");
-} else {
-  navegarA("home");
+
+window.changeProfile = () => {
+  fetch("./app/profile.html")
+    .then((res) => res.text())
+    .then(async (html) => {
+      document.getElementById("content").innerHTML = html;
+      document.getElementById("user-name").innerText = localStorage.getItem("username")
+      const id = localStorage.getItem("userId")
+      const amigos = await getAmigos(id)
+      console.log(amigos)
+
+      amigos.following.forEach((amigo, index) => {
+        document.getElementById("lista-amigos").innerHTML += index % 2 == 0 ?
+          `
+        <p onclick="getMensajes(${amigo.id})" class="friend-info"><strong>${amigo.username}</strong></p>
+        `
+          :
+          `
+        <p onclick="getMensajes(${amigo.id})" class="friend-info gray-friend"><strong>${amigo.username}</strong></p>
+        `
+      })
+    });
 }
+
+// Página inicial — si no hay sesión ir a login, si hay ir a home
+// const userId = localStorage.getItem("userId");
+// if (!userId) {
+//   navegarA("login");
+// } else {
+//   navegarA("home");
+// }
 
 // Abrir/cerrar panel buscador
 window.abrirBuscador = function () {
