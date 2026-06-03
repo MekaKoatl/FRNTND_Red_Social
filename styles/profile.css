@@ -8,6 +8,11 @@
     background-color: rgb(161, 161, 161);
 }
 
+#lista-amigos {
+    display: flex;
+    flex-direction: column;
+}
+
 .profile-section {
     border: 1px solid black;
     width: 50%;
