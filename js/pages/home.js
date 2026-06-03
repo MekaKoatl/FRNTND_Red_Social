@@ -32,12 +32,12 @@ export async function cargarHome() {
         </div>
         <div class="post-actions">
           <div class="post-actions-left">
-            <button class="action-btn">&#9825;</button>
-            <button class="action-btn">&#128172;</button>
-            <button class="action-btn">&#8594;</button>
+            <button class="action-btn"></button>
+            <button class="action-btn"></button>
+            <button class="action-btn"></button>
           </div>
           <div class="post-actions-right">
-            <button class="action-btn">&#9651;</button>
+            <button class="action-btn"></button>
           </div>
         </div>
       </div>
