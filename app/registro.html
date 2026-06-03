@@ -1,11 +1,22 @@
-<main id="auth-container">
-  <h2>Crear cuenta</h2>
-  <input id="email" type="email" placeholder="Correo electrónico">
-  <input id="username" type="text" placeholder="Nombre de usuario único">
-  <input id="password" type="password" placeholder="Contraseña (mínimo 8 caracteres)">
-  <p id="error-msg"></p>
-  <button onclick="registrarse()">Registrarse</button>
-  <p>¿Ya tienes cuenta? <a onclick="navegarA('login')" style="cursor:pointer">Inicia sesión</a></p>
+<main id="auth-container" >
+  <div class="inputs-main-container">
+    <div class="inputs-container">
+      <h2>Crear cuenta</h2>
+      <input id="email" type="email" placeholder="Correo electrónico" />
+      <input id="username" type="text" placeholder="Nombre de usuario único" />
+      <input
+        id="password"
+        type="password"
+        placeholder="Contraseña (mínimo 8 caracteres)"
+      />
+      <p id="error-msg"></p>
+      <button onclick="registrarse()">Registrarse</button>
+      <p>
+        ¿Ya tienes cuenta?
+        <a onclick="navegarA('login')" style="cursor: pointer">Inicia sesión</a>
+      </p>
+    </div>
+  </div>
   <!--
   1. condicional contraseña de al menos 8 caracteres para registrarse
   2. condicional user único para registrarse

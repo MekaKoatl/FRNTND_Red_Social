@@ -1,8 +1,15 @@
 <main id="auth-container">
-  <h2>Iniciar sesión</h2>
-  <input id="email" type="email" placeholder="Correo electrónico">
-  <input id="password" type="password" placeholder="Contraseña">
-  <p id="error-msg"></p>
-  <button onclick="iniciarSesion()">Entrar</button>
-  <p>¿No tienes cuenta? <a onclick="navegarA('registro')" style="cursor:pointer">Regístrate</a></p>
+  <div class="inputs-main-container">
+    <div class="inputs-container">
+      <h2>Iniciar sesión</h2>
+      <input id="email" type="email" placeholder="Correo electrónico" />
+      <input id="password" type="password" placeholder="Contraseña" />
+      <p id="error-msg"></p>
+      <button onclick="iniciarSesion()">Entrar</button>
+      <p>
+        ¿No tienes cuenta?
+        <a onclick="navegarA('registro')" style="cursor: pointer">Regístrate</a>
+      </p>
+    </div>
+  </div>
 </main>
