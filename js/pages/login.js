@@ -5,6 +5,8 @@ window.iniciarSesion = async function() {
   const password = document.getElementById('password').value;
   const errorMsg = document.getElementById('error-msg');
 
+  changePage("./app/profile.html")
+
   // Validaciones locales
   if (!email || !password) {
     errorMsg.textContent = 'Por favor completa todos los campos.';
@@ -22,3 +24,13 @@ window.iniciarSesion = async function() {
   }
 }
 
+
+
+window.goToRegister = () => {
+  console.log("holi")
+  fetch("./app/registro.html")
+    .then((res) => res.text())
+    .then((html) => {
+      document.getElementById("content").innerHTML = html;
+    });
+}

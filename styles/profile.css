@@ -1,0 +1,21 @@
+.friend-info {
+    padding: 0.1rem;
+    margin: 0.2rem;
+    width: 15rem;
+}
+
+.gray-friend {
+    background-color: rgb(161, 161, 161);
+}
+
+.profile-section {
+    border: 1px solid black;
+    width: 50%;
+    padding: 2rem;
+}
+
+
+#profile-container {
+    display: flex;
+    flex-direction: row;
+}
