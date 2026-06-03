@@ -15,7 +15,7 @@ let userSelectedId = ""
 
 // Cargar fragmento HTML
 async function cargarFragmento(pagina) {
-  const archivo = pagina === "registro" ? "resgistro" : pagina;
+  const archivo = pagina === "registro" ? "registro" : pagina;
   const res = await fetch(`./app/${archivo}.html`);
   const html = await res.text();
   content.innerHTML = html;
