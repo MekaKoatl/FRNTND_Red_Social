@@ -1,12 +1,30 @@
 //import { getusers } from '../api/usuarios.js';
 
-import { BASE_URL } from './config.js';
+import { BASE_URL } from "../api/config.js";
 
 //`${BASE_URL}/api/usuarios/seeusers`
 
+// export async function buscar() {
+//   const searchValue = document.getElementById("buscarInput").value.toLowerCase();
+//   const data = await getUsers();
+
+//   document.getElementById("usuariosBuscados").innerHTML = "";
+//   data
+//     .filter(u => u.username.toLowerCase().includes(searchValue))
+//     .forEach(u => {
+//       document.getElementById("usuariosBuscados").innerHTML += `
+//         <div class="usersearched">
+//           <p>${u.username}</p>
+//           <button>ver perfil</button>
+//         </div>`;
+//     });
+// }
+
+
 export async function buscar() {
-  let searchValue = document.getElementById("buscarInput").value;
+ const searchValue = document.getElementById("buscarInput").value.toLowerCase();
   console.log(searchValue);
+  const data = await getUsers();
   await fetch(`${BASE_URL}/api/usuarios/seeusers`)
     .then(function (response) {
       return res.json(getusers);
@@ -30,5 +48,7 @@ export async function buscar() {
       }
     });
 }
+
+
 
 import { getUsers } from "../api/usuarios.js";

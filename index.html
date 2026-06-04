@@ -11,13 +11,24 @@
       type="image/x-icon"
     />
   </head>
-  <!-- Modal crear post -->
+  <!-- Modals crear posts -->
   <div id="modal-post">
     <div id="modal-post-container">
       <textarea id="post-input" placeholder="Empieza a escribir..."></textarea>
       <div id="modal-post-buttons">
         <button onclick="descartarPost()">descartar</button>
         <button onclick="publicarPost()">publicar</button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal editar/eliminar post -->
+  <div id="modal-editar-post">
+    <div id="modal-editar-container">
+      <textarea id="editar-post-input"></textarea>
+      <div id="modal-editar-buttons">
+        <button onclick="cerrarModalEditar()">cancelar</button>
+        <button onclick="eliminarPostModal()">eliminar</button>
+        <button onclick="guardarEdicion()">guardar</button>
       </div>
     </div>
   </div>
