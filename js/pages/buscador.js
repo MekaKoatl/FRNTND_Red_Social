@@ -4,10 +4,10 @@ import { BASE_URL } from './config.js';
 
 //`${BASE_URL}/api/usuarios/seeusers`
 
-function buscar() {
+export async function buscar() {
   let searchValue = document.getElementById("buscarInput").value;
   console.log(searchValue);
-  fetch(`${BASE_URL}/api/usuarios/seeusers`)
+  await fetch(`${BASE_URL}/api/usuarios/seeusers`)
     .then(function (response) {
       return res.json(getusers);
     })
@@ -17,7 +17,7 @@ function buscar() {
         if (
           data[i].usuario.username //o solo username sin usuario
             .toLowerCase()
-            .substring(i - 1, data[i].username.length)//cambiar a searchvalue.lenght? si no funciona con data user
+            .substring(i - 1, data[i].username.length)//cambiar a searchvalue.lenght? 
             .includes(searchValue.toLowerCase())
         ) {
           document.getElementById("usuariosBuscados").innerHTML +=
