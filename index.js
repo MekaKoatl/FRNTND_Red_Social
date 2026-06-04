@@ -3,6 +3,7 @@ import { cargarLogin } from "./js/pages/login.js";
 import { cargarRegistro } from "./js/pages/registro.js";
 import { cargarProfile } from "./js/pages/profile.js";
 import { cargarMessages } from "./js/pages/messages.js";
+import { buscar } from "./js/pages/buscador.js";
 
 const content = document.getElementById("content");
 
