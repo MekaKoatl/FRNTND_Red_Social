@@ -213,3 +213,108 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+/* ===== PERFIL ===== */
+#profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 16px 24px;
+  gap: 8px;
+}
+
+#user-name {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+#user-desc {
+  font-size: 14px;
+  color: #667;
+}
+
+#profile-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+#profile-buttons button {
+  padding: 6px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #445;
+  color: #eef;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#user-posts {
+  width: 100%;
+  background-color: #aab;
+  min-height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+  gap: 12px;
+}
+
+/* ===== MODAL CREAR POST ===== */
+#modal-post {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+#modal-post.abierto {
+  display: flex;
+}
+
+#modal-post-container {
+  background-color: #4a4a4a;
+  padding: 24px;
+  width: 520px;
+  max-width: 90%;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#post-input {
+  width: 100%;
+  height: 300px;
+  background-color: #d4d4d4;
+  border: none;
+  padding: 16px;
+  font-size: 15px;
+  resize: none;
+  border-radius: 2px;
+}
+
+#modal-post-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+#modal-post-buttons button {
+  padding: 10px 24px;
+  border: 2px solid #ffffff;
+  border-radius: 24px;
+  background: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+}

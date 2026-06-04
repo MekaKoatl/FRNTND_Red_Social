@@ -1,9 +1,13 @@
-<h5 id="user-name"></h5>
-<div>
-  <button>lista de amigos</button>
-  <button>editar perfil</button>
-  <button onclick="cerrarSesion()">Cerrar sesión</button>
-</div>
-<div id="user-posts">
-  <p>Cargando feed...</p>
+<div id="profile-container">
+  <div id="profile-info">
+    <h2 id="user-name"></h2>
+    <p id="user-desc">Sin descripción</p>
+    <div id="profile-buttons">
+      <button onclick="verAmigos()">amigos</button>
+      <button onclick="navegarA('ajustes')">Configuración</button>
+    </div>
+  </div>
+  <div id="user-posts">
+    <p>Cargando posts...</p>
+  </div>
 </div>

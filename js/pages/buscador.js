@@ -26,3 +26,5 @@ function buscar() {
       }
     });
 }
+
+import { getUsers } from "../api/usuarios.js";

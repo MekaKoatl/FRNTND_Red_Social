@@ -3,23 +3,21 @@ import { cargarLogin } from "./js/pages/login.js";
 import { cargarRegistro } from "./js/pages/registro.js";
 import { cargarProfile } from "./js/pages/profile.js";
 import { cargarMessages } from "./js/pages/messages.js";
+import './js/pages/buscador.js';
 
 const content = document.getElementById("content");
 
-// window.getMensajes = getMensajes
-
 //variables globales
 let userName = "";
-let userId = ""
-let userSelectedId = ""
+let userId = "";
+let userSelectedId = "";
 
 // Cargar fragmento HTML
 async function cargarFragmento(pagina) {
-  const archivo = pagina === "registro" ? "registro" : pagina;
-  const res = await fetch(`./app/${archivo}.html`);
+  const res = await fetch(`./app/${pagina}.html`);
   const html = await res.text();
   content.innerHTML = html;
-} // ← faltaba esta llave
+}
 
 // Navegación principal
 window.navegarA = async function (pagina) {
@@ -42,55 +40,21 @@ window.navegarA = async function (pagina) {
   await cargarFragmento(pagina);
 
   switch (pagina) {
-    case "home":
-      cargarHome();
-      break;
-    case "login":
-      cargarLogin();
-      break;
-    case "registro":
-      cargarRegistro();
-      break;
-    case "profile":
-      cargarProfile();
-      break;
-    case "messages":
-      cargarMessages();
-      break;
+    case "home":     cargarHome(); break;
+    case "login":    cargarLogin(); break;
+    case "registro": cargarRegistro(); break;
+    case "profile":  cargarProfile(); break;
+    case "messages": cargarMessages(); break;
   }
 };
 
-
-window.changeProfile = () => {
-  fetch("./app/profile.html")
-    .then((res) => res.text())
-    .then(async (html) => {
-      document.getElementById("content").innerHTML = html;
-      document.getElementById("user-name").innerText = localStorage.getItem("username")
-      const id = localStorage.getItem("userId")
-      const amigos = await getAmigos(id)
-      console.log(amigos)
-
-      amigos.following.forEach((amigo, index) => {
-        document.getElementById("lista-amigos").innerHTML += index % 2 == 0 ?
-          `
-        <p onclick="getMensajes(${amigo.id})" class="friend-info"><strong>${amigo.username}</strong></p>
-        `
-          :
-          `
-        <p onclick="getMensajes(${amigo.id})" class="friend-info gray-friend"><strong>${amigo.username}</strong></p>
-        `
-      })
-    });
-}
-
 // Página inicial — si no hay sesión ir a login, si hay ir a home
-// const userId = localStorage.getItem("userId");
-// if (!userId) {
-//   navegarA("login");
-// } else {
-//   navegarA("home");
-// }
+const userId_stored = localStorage.getItem("userId");
+if (!userId_stored) {
+  navegarA("login");
+} else {
+  navegarA("home");
+}
 
 // Abrir/cerrar panel buscador
 window.abrirBuscador = function () {
@@ -100,3 +64,38 @@ window.abrirBuscador = function () {
 window.cerrarBuscador = function () {
   document.getElementById("panel-buscador").classList.remove("abierto");
 };
+
+
+// Abrir modal crear post
+window.abrirModalPost = function () {
+  document.getElementById('modal-post').classList.add('abierto');
+}
+
+// Descartar post
+window.descartarPost = function () {
+  document.getElementById('post-input').value = '';
+  document.getElementById('modal-post').classList.remove('abierto');
+}
+
+// Publicar post
+window.publicarPost = async function () {
+  const body = document.getElementById('post-input').value.trim();
+  if (!body) return;
+
+  const userId = localStorage.getItem('userId');
+  const username = localStorage.getItem('username');
+
+  const res = await fetch('https://backendredsocial.vercel.app/posts/addpost', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ userId, username, body })
+  });
+  const data = await res.json();
+
+  if (data.id) {
+    descartarPost();
+    navegarA('profile');
+  } else {
+    alert('Error al publicar');
+  }
+}

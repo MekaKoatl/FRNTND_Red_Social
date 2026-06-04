@@ -11,10 +11,20 @@
       type="image/x-icon"
     />
   </head>
+  <!-- Modal crear post -->
+  <div id="modal-post">
+    <div id="modal-post-container">
+      <textarea id="post-input" placeholder="Empieza a escribir..."></textarea>
+      <div id="modal-post-buttons">
+        <button onclick="descartarPost()">descartar</button>
+        <button onclick="publicarPost()">publicar</button>
+      </div>
+    </div>
+  </div>
   <body>
     <nav id="navbar">
       <div id="nav-logo">
-        <a onclick="navegarA('postcrear')" style="cursor: pointer">+</a>
+        <a onclick="abrirModalPost()" style="cursor: pointer">+</a>
       </div>
       <div id="nav-links">
         <a onclick="navegarA('home')" class="nav-link">Home</a>
