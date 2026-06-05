@@ -15,10 +15,10 @@ export async function chat(contactId){
   const userId = localStorage.getItem("userId")
     const res = await fetch(`./app/messages.html`);
     const html = await res.text();
-  content.innerHTML = html;
+    content.innerHTML = html;
     console.log(contactId, userId)
-    document.getElementById
-}
+    if(contactId){document.getElementById("userContact").innerText = contactId
+}}
 
 
 export async function getMessage(){
