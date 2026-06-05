@@ -14,6 +14,9 @@ import { BASE_URL } from './config.js';
 export async function chat(contactId){
   const userId = localStorage.getItem("userId")
   console.log(contactId, userId)
+    const res = await fetch(`./app/messages.html`);
+  const html = await res.text();
+  content.innerHTML = html;
 }
 
 
