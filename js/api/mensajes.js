@@ -27,12 +27,16 @@ export async function chat(contactId){
 
 
 export async function getMessage(){
+  const receiverId = "bro"
+  const senderId = "sis"
+  const text = "sib"
+
   fetch(`${BASE_URL}/mensajes`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ nombre: name, apellido: surname, dni: dni }),
+    body: JSON.stringify({receiverId, senderId, text}),
   })
     .then((res) => res.json())
     .then((data) => {
