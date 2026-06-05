@@ -2,11 +2,26 @@
   <div id="profile-info">
     <h2 id="user-name"></h2>
     <p id="user-desc">Sin descripción</p>
+
+    <!-- Editar descripción -->
+    <div id="desc-edit" style="display:none">
+      <input id="desc-input" type="text" placeholder="Escribe tu descripción...">
+      <div id="desc-buttons">
+        <button onclick="cancelarDesc()">Cancelar</button>
+        <button onclick="guardarDesc()">Guardar</button>
+      </div>
+    </div>
+
+    <button id="btn-editar-desc" onclick="editarDesc()">+ descripción</button>
+
     <div id="profile-buttons">
       <button onclick="verAmigos()">amigos</button>
       <button onclick="navegarA('ajustes')">Configuración</button>
       <button onclick="cerrarSesion()">Cerrar sesión</button>
     </div>
+  </div>
+  <div id="posts-header">
+    <button onclick="cargarProfile()">↻ Actualizar posts</button>
   </div>
   <div id="user-posts">
     <p>Cargando posts...</p>

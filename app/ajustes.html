@@ -1,0 +1,21 @@
+<div id="ajustes-container">
+  <h2>Configuración</h2>
+
+  <div class="ajuste-seccion">
+    <h3>Editar perfil</h3>
+    <input id="ajuste-username" type="text" placeholder="Nuevo nombre de usuario">
+    <input id="ajuste-email" type="email" placeholder="Nuevo correo electrónico">
+    <input id="ajuste-password" type="password" placeholder="Nueva contraseña (mínimo 8 caracteres)">
+    <p id="ajuste-error"></p>
+    <div class="ajuste-buttons">
+      <button onclick="navegarA('profile')">Cancelar</button>
+      <button onclick="guardarAjustes()">Guardar cambios</button>
+    </div>
+  </div>
+
+  <div class="ajuste-seccion danger">
+    <h3>Zona de peligro - <a href="https://www.youtube.com/watch?v=WEOqeAxr7ww" class="link-sin-estilo">esto significa peligro</a></h3>
+    <p>Esta acción es irreversible.</p>
+    <button onclick="confirmarBorrarCuenta()">Borrar cuenta</button>
+  </div>
+</div>

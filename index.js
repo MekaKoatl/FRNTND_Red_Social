@@ -4,6 +4,7 @@ import { cargarRegistro } from "./js/pages/registro.js";
 import { cargarProfile } from "./js/pages/profile.js";
 import { cargarMessages } from "./js/pages/messages.js";
 import { buscar } from "./js/pages/buscador.js";
+import { cargarAjustes } from "./js/pages/ajustes.js";
 
 const content = document.getElementById("content");
 
@@ -40,11 +41,24 @@ window.navegarA = async function (pagina) {
   await cargarFragmento(pagina);
 
   switch (pagina) {
-    case "home":     cargarHome(); break;
-    case "login":    cargarLogin(); break;
-    case "registro": cargarRegistro(); break;
-    case "profile":  cargarProfile(); break;
-    case "messages": cargarMessages(); break;
+    case "home":
+      cargarHome();
+      break;
+    case "login":
+      cargarLogin();
+      break;
+    case "registro":
+      cargarRegistro();
+      break;
+    case "profile":
+      cargarProfile();
+      break;
+    case "messages":
+      cargarMessages();
+      break;
+    case "ajustes":
+      cargarAjustes();
+      break;
   }
 };
 
@@ -65,37 +79,43 @@ window.cerrarBuscador = function () {
   document.getElementById("panel-buscador").classList.remove("abierto");
 };
 
-
 // Abrir modal crear post
 window.abrirModalPost = function () {
-  document.getElementById('modal-post').classList.add('abierto');
-}
+  document.getElementById("modal-post").classList.add("abierto");
+};
 
 // Descartar post
 window.descartarPost = function () {
-  document.getElementById('post-input').value = '';
-  document.getElementById('modal-post').classList.remove('abierto');
-}
+  document.getElementById("post-input").value = "";
+  document.getElementById("modal-post").classList.remove("abierto");
+};
 
 // Publicar post
 window.publicarPost = async function () {
-  const body = document.getElementById('post-input').value.trim();
+  const body = document.getElementById("post-input").value.trim();
   if (!body) return;
 
-  const userId = localStorage.getItem('userId');
-  const username = localStorage.getItem('username');
+  const userId = localStorage.getItem("userId");
+  const username = localStorage.getItem("username");
 
-  const res = await fetch('https://backendredsocial.vercel.app/posts/addpost', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ userId, username, body })
+  const res = await fetch("https://backendredsocial.vercel.app/posts/addpost", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ userId, username, body }),
   });
   const data = await res.json();
 
   if (data.id) {
     descartarPost();
-    navegarA('profile');
+    // navegarA('profile');
   } else {
-    alert('Error al publicar');
+    alert("Error al publicar");
   }
-}
+};
+
+////Buscador
+window.buscar = buscar;
+
+//Actualizar boton
+window.cargarHome = cargarHome;
+window.cargarProfile = cargarProfile;
