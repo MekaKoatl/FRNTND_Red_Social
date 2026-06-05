@@ -2,6 +2,10 @@ import { getSeguidores, seguir, dejar } from '../api/seguidores.js';
 import { getFeed } from '../api/posts.js';
 import { BASE_URL } from '../api/config.js';
 
+import { chat } from "../api/mensajes.js";
+
+window.chat = chat
+
 export async function cargarHome() {
   const userId = localStorage.getItem('userId');
   const content = document.getElementById('feed-container');

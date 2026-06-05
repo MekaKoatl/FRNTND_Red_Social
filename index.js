@@ -2,7 +2,7 @@ import { cargarHome } from "./js/pages/home.js";
 import { cargarLogin } from "./js/pages/login.js";
 import { cargarRegistro } from "./js/pages/registro.js";
 import { cargarProfile } from "./js/pages/profile.js";
-import { cargarMessages } from "./js/pages/messages.js";
+import { getMessage } from "./js/api/mensajes.js";
 import { buscar } from "./js/pages/buscador.js";
 import { cargarAjustes } from "./js/pages/ajustes.js";
 
@@ -54,7 +54,7 @@ window.navegarA = async function (pagina) {
       cargarProfile();
       break;
     case "messages":
-      cargarMessages();
+      getMessage();
       break;
     case "ajustes":
       cargarAjustes();

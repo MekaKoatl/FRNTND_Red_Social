@@ -79,6 +79,7 @@ export async function cargarProfile() {
     postsSection.innerHTML = seguidos.map((u) => `
       <div class="amigo-item">
         <p><strong>@${u.username}</strong></p>
+        <button class="follow-btn" onclick="chat('${u._id}')">enviar mensaje</button>
         <button class="follow-btn" onclick="dejarAmigo('${u._id}')">Dejar de seguir</button>
       </div>
     `).join("");
