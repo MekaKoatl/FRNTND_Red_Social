@@ -54,7 +54,7 @@ window.navegarA = async function (pagina) {
       cargarProfile();
       break;
     case "messages":
-      getMessage();
+     // getMessage();
       break;
     case "ajustes":
       cargarAjustes();
