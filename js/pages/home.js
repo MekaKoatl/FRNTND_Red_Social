@@ -1,11 +1,12 @@
-import { getSeguidores } from '../api/seguidores.js';
+import { getSeguidores, seguir, dejar } from '../api/seguidores.js';
 import { getFeed } from '../api/posts.js';
+import { BASE_URL } from '../api/config.js';
 
 export async function cargarHome() {
   const userId = localStorage.getItem('userId');
   const content = document.getElementById('feed-container');
 
-  // Obtener seguidos
+  // Obtener seguidos y feed en paralelo
   const { following } = await getSeguidores(userId);
 
   // Si no sigue a nadie
@@ -14,7 +15,6 @@ export async function cargarHome() {
     return;
   }
 
-  // Obtener posts de seguidos
   const posts = await getFeed(following);
 
   if (posts.length === 0) {
@@ -23,24 +23,50 @@ export async function cargarHome() {
   }
 
   // Renderizar posts
-  content.innerHTML = posts.map(post => `
-    <article class="post-card">
-      <p class="post-username">${post.username}</p>
-      <div class="post-container">
-        <div class="post-body">
-          <p>${post.body}</p>
+  content.innerHTML = posts.map(post => {
+    const yaSigue = following.some(id => id.toString() === post.userId.toString());
+
+    return `
+      <article class="post-card">
+        <div class="post-header">
+          <p class="post-username">@${post.username}</p>
+          <button class="follow-btn" onclick="${yaSigue ? `dejarSeguirPost('${post.userId}')` : `seguirPost('${post.userId}')`}">
+            ${yaSigue ? 'Dejar de seguir' : 'Seguir'}
+          </button>
         </div>
-        <div class="post-actions">
-          <div class="post-actions-left">
-            <button class="action-btn"></button>
-            <button class="action-btn"></button>
-            <button class="action-btn"></button>
+        <div class="post-container">
+          <div class="post-body">
+            <p>${post.body}</p>
           </div>
-          <div class="post-actions-right">
-            <button class="action-btn"></button>
+          <div class="post-actions">
+            <div class="post-actions-left">
+              <button class="action-btn"></button>
+              <button class="action-btn"></button>
+              <button class="action-btn"></button>
+            </div>
+            <div class="post-actions-right">
+              <button class="action-btn"></button>
+            </div>
           </div>
         </div>
-      </div>
-    </article>
-  `).join('');
+      </article>
+    `;
+  }).join('');
+
+  window.seguirPost = async function(followId) {
+    const res = await fetch(`${BASE_URL}/seguidores/seguir`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, followId })
+    });
+    const data = await res.json();
+    alert(data.message);
+    cargarHome();
+  }
+
+  window.dejarSeguirPost = async function(followId) {
+    const data = await dejar(userId, followId);
+    alert(data.message);
+    cargarHome();
+  }
 }
