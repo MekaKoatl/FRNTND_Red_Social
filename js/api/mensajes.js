@@ -1,7 +1,7 @@
 import { BASE_URL } from './config.js';
 
 // export async function sendMessage(text) {
-//   let text = document.getElementById("mensajeInput").value
+//   const text = document.getElementById("mensajeInput").value
 //   const res = await fetch(`${BASE_URL}/mensajes`, {
 //     method: "POST",
 //     headers: { "Content-Type": "application/json" },
@@ -27,9 +27,9 @@ export async function chat(contactId){
 
 
 export async function getMessage(){
-  const receiverId = "bro"
-  const senderId = "sis"
-  const text = "sib"
+  const receiverId = document.getElementById("userContact").innerText
+  const senderId = localStorage.getItem("userId")
+  const text = document.getElementById("mensajeInput").value
 
   fetch(`${BASE_URL}/mensajes`, {
     method: "POST",
@@ -41,9 +41,7 @@ export async function getMessage(){
     .then((res) => res.json())
     .then((data) => {
       console.log(data)
-document.getElementbyId("mensajesChat").innerHTML = `<div id="mensajeUser"><p>mensaje el user</p></div>
-
-<div id="mensajePropio"><p>mensaje mio</p></div>`
+      document.getElementById("").innerText = text
 })
 }
 
