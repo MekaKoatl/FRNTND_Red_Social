@@ -3,9 +3,10 @@ import { cargarLogin } from "./js/pages/login.js";
 import { cargarRegistro } from "./js/pages/registro.js";
 import { cargarProfile } from "./js/pages/profile.js";
 import { getMessage } from "./js/api/mensajes.js";
+import { getConvo } from "./js/api/mensajes.js";
 import { buscar } from "./js/pages/buscador.js";
 import { cargarAjustes } from "./js/pages/ajustes.js";
-import { getConvo } from "./js/api/mensajes.js";
+
 
 const content = document.getElementById("content");
 
@@ -55,7 +56,7 @@ window.navegarA = async function (pagina) {
       cargarProfile();
       break;
     case "messages":
-     // getMessage();
+     //getConvo();
       break;
     case "ajustes":
       cargarAjustes();

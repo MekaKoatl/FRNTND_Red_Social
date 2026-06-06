@@ -10,16 +10,6 @@ import { BASE_URL } from './config.js';
 //   return res.json();
 //}
 
-getConvo()
-
-export async function getConvo() {
-  let userId1 = [localStorage.getItem("userId"), localStorage.getItem("userId")]
-  let userId2 = [localStorage.getItem("userId"), localStorage.getItem("userId")]
-  fetch(`/conversacion/${userId1}/${userId2}`).then((res) => res.json())
-    .then((data) =>
-      mensajes.forEach(text => {
-        document.getElementById("mensajesChat").innerText += text}))}
-
 
 
 
@@ -40,12 +30,12 @@ export async function chat(contactId){
 
 
 export async function getMessage(){
-  let senderId = [ localStorage.getItem("userId")]
-  let receiverId = [document.getElementById("userContact").innerText]
+  let senderId = localStorage.getItem("userId")
+  let receiverId = document.getElementById("userContact").innerText
 
   const text = document.getElementById("mensajeInput").value
 
-  fetch(`${BASE_URL}/mensajes`, {
+  await fetch(`${BASE_URL}/mensajes`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -54,8 +44,16 @@ export async function getMessage(){
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data, text)
+      console.log(data)
       })
     }
 
 
+export async function getConvo() {
+  let userId1 = localStorage.getItem("userId")
+  let userId2 = localStorage.getItem("userId")
+  await fetch(`/conversacion/${userId1}/${userId2}`).then((res) => res.json())
+    .then((data) =>
+{ console.log(data)
+       document.getElementById("mensajesChat").innerText += data
+      })}
