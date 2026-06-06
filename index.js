@@ -5,6 +5,7 @@ import { cargarProfile } from "./js/pages/profile.js";
 import { getMessage } from "./js/api/mensajes.js";
 import { buscar } from "./js/pages/buscador.js";
 import { cargarAjustes } from "./js/pages/ajustes.js";
+import { getConvo } from "./js/api/mensajes.js";
 
 const content = document.getElementById("content");
 
