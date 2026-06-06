@@ -41,7 +41,14 @@ export async function getMessage(){
     .then((res) => res.json())
     .then((data) => {
       console.log(data)
-      document.getElementById("").innerText = text
 })
+
+let userId1 = localStorage.getItem("userId")
+fetch(`${BASE_URL}/mensajes/conversacion/${userId1}/${userId1}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data)
+      document.getElementById("mensajeInput").innerText = data
+    })
 }
 
