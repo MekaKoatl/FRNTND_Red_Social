@@ -2,12 +2,15 @@ import { cargarHome } from "./js/pages/home.js";
 import { cargarLogin } from "./js/pages/login.js";
 import { cargarRegistro } from "./js/pages/registro.js";
 import { cargarProfile } from "./js/pages/profile.js";
-import { getMessage } from "./js/api/mensajes.js";
-import { getConvo } from "./js/api/mensajes.js";
+import { sendMessage } from "./js/api/mensajes.js";
+import { getTheirs } from "./js/api/mensajes.js";
+import { getMine } from "./js/api/mensajes.js";
 import { buscar } from "./js/pages/buscador.js";
 import { cargarAjustes } from "./js/pages/ajustes.js";
 
-window.getConvo = getConvo
+window.getTheirs = getTheirs
+window.getMine = getMine
+window.sendMessage = sendMessage
 
 const content = document.getElementById("content");
 
@@ -57,7 +60,7 @@ window.navegarA = async function (pagina) {
       cargarProfile();
       break;
     case "messages":
-     //getConvo();
+     //getTheirs();
       break;
     case "ajustes":
       cargarAjustes();

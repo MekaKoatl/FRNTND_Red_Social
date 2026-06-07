@@ -4,9 +4,9 @@ import { BASE_URL } from '../api/config.js';
 
 import { chat } from "../api/mensajes.js";
 
-import { getMessage } from '../api/mensajes.js';
+import { sendMessage } from '../api/mensajes.js';
 
-window.getMessage = getMessage
+window.sendMessage = sendMessage
 
 window.chat = chat
 

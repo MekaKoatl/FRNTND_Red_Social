@@ -11,7 +11,8 @@ import { BASE_URL } from './config.js';
 //}
 
 
-
+getTheirs()
+getMine()
 
 export async function chat(contactId){
   const userId = localStorage.getItem("userId")
@@ -29,7 +30,7 @@ export async function chat(contactId){
     }
 
 
-export async function getMessage(){
+export async function sendMessage(){
   let senderId = localStorage.getItem("userId")
   let receiverId = document.getElementById("userContact").innerText
 
@@ -49,7 +50,7 @@ export async function getMessage(){
     }
 
 
-export async function getConvo() {
+export async function getTheirs() {
   document.getElementById("mensajesRecibidos").innerText = ""
   let userId = document.getElementById("userContact").innerText 
   await fetch(`${BASE_URL}/mensajes/${userId}`).then((res) => res.json())
@@ -57,4 +58,14 @@ export async function getConvo() {
 { console.log(data)
   for(let i = 0; i < data.length; i++)
        document.getElementById("mensajesRecibidos").innerHTML += `<p>${data[i].text}</p><p>${data[i].createdAt}</p>`
+      })}
+
+export async function getMine() {
+  document.getElementById("mensajesEnviados").innerText = ""
+  let userId = localStorage.getItem("userId")
+  await fetch(`${BASE_URL}/mensajes/${userId}`).then((res) => res.json())
+    .then((data) =>
+{ console.log(data)
+  for(let i = 0; i < data.length; i++)
+       document.getElementById("mensajesEnviados").innerHTML += `<p>${data[i].text}</p><p>${data[i].createdAt}</p>`
       })}

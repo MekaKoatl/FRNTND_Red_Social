@@ -4,12 +4,14 @@
   <h3 id="userContact">usuario</h3>
 </div>
 <div id="mensajesChat">
-  <div id="mensajesRecibidos"></div>
+  <div class="mensajesConvo" id="mensajesRecibidos"></div>
+  <div class="mensajesConvo" id="mensajesEnviados"></div>
 </div>
   <div>
     <input type="text" placeholder="escribe aquí" id="mensajeInput"/>
-    <button onclick="getMessage()">enviar</button>
-    <button onclick="getConvo()">recargar conversación</button>
+    <button onclick="sendMessage()">enviar</button>
+    <button onclick="getTheirs()">recargar mensajes recibidos</button>
+    <button onclick="getMine()">recargar mensajes enviados</button>
   </div>
 
 </div>
