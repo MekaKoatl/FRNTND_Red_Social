@@ -7,6 +7,7 @@ import { getConvo } from "./js/api/mensajes.js";
 import { buscar } from "./js/pages/buscador.js";
 import { cargarAjustes } from "./js/pages/ajustes.js";
 
+window.getConvo = getConvo
 
 const content = document.getElementById("content");
 

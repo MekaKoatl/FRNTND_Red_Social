@@ -50,9 +50,9 @@ export async function getMessage(){
 
 
 export async function getConvo() {
-  let userId1 = localStorage.getItem("userId")
-  let userId2 = localStorage.getItem("userId")
-  await fetch(`/conversacion/${userId1}/${userId2}`).then((res) => res.json())
+  let userId1 = localStorage.getItem("userId") 
+  let userId2 = document.getElementById("userContact").innerText
+  await fetch(`${BASE_URL}/mensajes/conversacion/${userId1}/${userId2}`).then((res) => res.json())
     .then((data) =>
 { console.log(data)
        document.getElementById("mensajesChat").innerText += data
