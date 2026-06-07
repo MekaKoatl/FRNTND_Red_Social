@@ -50,11 +50,11 @@ export async function getMessage(){
 
 
 export async function getConvo() {
-  document.getElementById("mensajesChat").innerText = ""
+  document.getElementById("mensajesRecibidos").innerText = ""
   let userId = document.getElementById("userContact").innerText 
   await fetch(`${BASE_URL}/mensajes/${userId}`).then((res) => res.json())
     .then((data) =>
 { console.log(data)
   for(let i = 0; i < data.length; i++)
-       document.getElementById("mensajesChat").innerText += data[i].text
+       document.getElementById("mensajesRecibidos").innerHTML += `<p>${data[i].text}</p><p>${data[i].createdAt}</p>`
       })}
