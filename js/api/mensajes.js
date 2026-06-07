@@ -22,12 +22,12 @@ export async function chat(contactId){
     content.innerHTML = html;
     console.log(contactId, userId)
     document.getElementById("userContact").innerText = contactId
-    
-    await fetch (`${BASE_URL}/usuarios/seeusers`).then((res) => res.json())
-    .then((data) => {
-      for(let i = 0; i < data.length; i++)
-      {if(contactId = _id){document.getElementById("usernameContact").innerText = data.username}}
-    })};
+    };
+
+        // await fetch (`${BASE_URL}/usuarios/seeusers`).then((res) => res.json())
+    // .then((data) => {
+    //   for(let i = 0; i < data.length; i++)
+    //   {if(contactId = _id){document.getElementById("usernameContact").innerText = data.username}}
 
 
 
