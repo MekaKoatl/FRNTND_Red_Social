@@ -674,3 +674,80 @@ body {
   color: inherit;
   cursor: pointer;
 }
+
+
+/* mensajes */
+#messagesenderbox{
+  display: flex;
+  flex-direction: column;
+  background-color: #334;
+  padding: 1rem;
+  border-radius: 20px;
+  align-items: end;
+}
+
+#messagesenderbox button {
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: none;
+  margin-top: 1rem;
+}
+
+#messagesenderbox input {
+  background-color: #eef;
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: none;
+  width: 550px
+}
+
+#enviar{
+  background-color: #eef;
+}
+
+#recibidos{
+  background-color: #aab;
+}
+
+#enviados{
+  background-color: #889;
+}
+
+
+
+#mensajesChat{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:end
+}
+
+.fechamensaje{
+  font-size: 5px;
+  color:#eef
+}
+
+.mensajesConvo div{
+  border-radius: 20px;
+  margin: 0.7rem;
+  padding: 0.5rem;
+    height: fit-content;
+  width: 200px;
+}
+
+.mensajesConvo p{
+  margin: 0.2rem;
+}
+
+#mensajesRecibidos div{
+  background-color:#aab;
+}
+
+#mensajesEnviados div{
+  background-color:#889;
+}
+
+#userContact{
+  color: #eef;
+  font-size: 1px
+}

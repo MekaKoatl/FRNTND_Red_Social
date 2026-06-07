@@ -7,7 +7,9 @@ import { getTheirs } from "./js/api/mensajes.js";
 import { getMine } from "./js/api/mensajes.js";
 import { buscar } from "./js/pages/buscador.js";
 import { cargarAjustes } from "./js/pages/ajustes.js";
+import {getContactUsername} from "./js/api/mensajes.js"
 
+window.getContactUsername = getContactUsername
 window.getTheirs = getTheirs
 window.getMine = getMine
 window.sendMessage = sendMessage

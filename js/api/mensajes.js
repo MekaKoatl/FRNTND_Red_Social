@@ -14,20 +14,22 @@ import { BASE_URL } from './config.js';
 getTheirs()
 getMine()
 
+
 export async function chat(contactId){
   const userId = localStorage.getItem("userId")
     const res = await fetch(`./app/messages.html`);
     const html = await res.text();
     content.innerHTML = html;
     console.log(contactId, userId)
-    if(contactId){document.getElementById("userContact").innerText = contactId
-    fetch(`${BASE_URL}/mensajes/${userId}`,)
-    .then((res) => res.json())
+    document.getElementById("userContact").innerText = contactId
+    
+    await fetch (`${BASE_URL}/usuarios/seeusers`).then((res) => res.json())
     .then((data) => {
-      console.log(data)
-    })
-    };
-    }
+      for(let i = 0; i < data.length; i++)
+      {if(contactId = _id){document.getElementById("usernameContact").innerText = data.username}}
+    })};
+
+
 
 
 export async function sendMessage(){
@@ -57,7 +59,7 @@ export async function getTheirs() {
     .then((data) =>
 { console.log(data)
   for(let i = 0; i < data.length; i++)
-       document.getElementById("mensajesRecibidos").innerHTML += `<p>${data[i].text}</p><p>${data[i].createdAt}</p>`
+       document.getElementById("mensajesRecibidos").innerHTML += `<div><p>${data[i].text}</p><p class="fechamensaje">${data[i].createdAt}</p></div>`
       })}
 
 export async function getMine() {
@@ -67,5 +69,5 @@ export async function getMine() {
     .then((data) =>
 { console.log(data)
   for(let i = 0; i < data.length; i++)
-       document.getElementById("mensajesEnviados").innerHTML += `<p>${data[i].text}</p><p>${data[i].createdAt}</p>`
+       document.getElementById("mensajesEnviados").innerHTML += `<div><p>${data[i].text}</p><p class="fechamensaje">${data[i].createdAt}</p></div>`
       })}
