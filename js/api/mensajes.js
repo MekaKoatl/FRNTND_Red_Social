@@ -11,8 +11,6 @@ import { BASE_URL } from './config.js';
 //}
 
 
-getTheirs()
-getMine()
 
 
 export async function chat(contactId){
@@ -52,22 +50,13 @@ export async function sendMessage(){
     }
 
 
-export async function getTheirs() {
+export async function getMessages() {
   document.getElementById("mensajesRecibidos").innerText = ""
-  let userId = document.getElementById("userContact").innerText 
-  await fetch(`${BASE_URL}/mensajes/${userId}`).then((res) => res.json())
+  const userId1 = document.getElementById("userContact").innerText 
+  const userId2 = localStorage.getItem("userId")
+  await fetch(`${BASE_URL}/mensajes/conversacion/${userId1}/${userId2}`).then((res) => res.json())
     .then((data) =>
 { console.log(data)
   for(let i = 0; i < data.length; i++)
        document.getElementById("mensajesRecibidos").innerHTML += `<div><p>${data[i].text}</p><p class="fechamensaje">${data[i].createdAt}</p></div>`
-      })}
-
-export async function getMine() {
-  document.getElementById("mensajesEnviados").innerText = ""
-  let userId = localStorage.getItem("userId")
-  await fetch(`${BASE_URL}/mensajes/${userId}`).then((res) => res.json())
-    .then((data) =>
-{ console.log(data)
-  for(let i = 0; i < data.length; i++)
-       document.getElementById("mensajesEnviados").innerHTML += `<div><p>${data[i].text}</p><p class="fechamensaje">${data[i].createdAt}</p></div>`
       })}
