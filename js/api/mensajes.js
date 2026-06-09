@@ -58,5 +58,6 @@ export async function getMessages() {
     .then((data) =>
 { console.log(data)
   for(let i = 0; i < data.length; i++)
+    if(receiverd == localStorage.getItem("userId") && senderID == document.getElementById("userContact").innerText )
        document.getElementById("mensajesRecibidos").innerHTML += `<div><p>${data[i].text}</p><p class="fechamensaje">${data[i].createdAt}</p></div>`
       })}
